@@ -1,0 +1,108 @@
+ext {
+    AndroidSdk = [
+            compileSdk: 30,
+            targetSdk : 30,
+            minSdk    : 24,
+            buildTools: "30.0.3"
+    ]
+
+    LibrariesVersion = [
+            appCompat       : "1.2.0",
+            fragmentKtx     : "1.2.5",
+            materialDesign  : "1.3.0",
+            androidCore     : "1.3.2",
+            constraintLayout: "2.0.4",
+            okHTTPLogger    : "4.9.0",
+            retrofit        : "2.9.0",
+            moshi           : "1.9.2",
+            coroutines      : "1.4.2",
+            kotlin          : "1.4.10",
+            hilt            : "2.33-beta",
+            javaxInject     : "1",
+            mpAndroidChart  : "v3.1.0-alpha"
+    ]
+
+    BuildPlugins = [
+            androidGradlePlugin: "com.android.tools.build:gradle:4.1.2",
+            kotlinGradlePlugin : "org.jetbrains.kotlin:kotlin-gradle-plugin:$LibrariesVersion.kotlin",
+            hiltGradlePlugin   : "com.google.dagger:hilt-android-gradle-plugin:$LibrariesVersion.hilt",
+            androidApplication : "com.android.application",
+            kotlinAndroid      : "kotlin-android",
+            kotlinKapt         : "kotlin-kapt",
+            daggerHilt         : "dagger.hilt.android.plugin",
+            kotlinParcelize    : "kotlin-parcelize"
+    ]
+
+
+    AndroidClient = [
+            appId      : "com.saldi.bitcoinmarketplace",
+            versionCode: 1,
+            versionName: "1.0"
+    ]
+
+
+    appDependencies = [
+            hilt             : "com.google.dagger:hilt-android:$LibrariesVersion.hilt",
+            hiltCompiler     : "com.google.dagger:hilt-android-compiler:$LibrariesVersion.hilt",
+            appCompat        : "androidx.appcompat:appcompat:$LibrariesVersion.appCompat",
+            fragmentKTX      : "androidx.fragment:fragment-ktx:$LibrariesVersion.fragmentKtx",
+            androidCore      : "androidx.core:core-ktx:$LibrariesVersion.androidCore",
+            materialDesign   : "com.google.android.material:material:$LibrariesVersion.materialDesign",
+            constraintLayout : "androidx.constraintlayout:constraintlayout:$LibrariesVersion.constraintLayout",
+            coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$LibrariesVersion.coroutines",
+            javaxInject      : "javax.inject:javax.inject:$LibrariesVersion.javaxInject",
+            retrofit         : "com.squareup.retrofit2:retrofit:$LibrariesVersion.retrofit"
+    ]
+
+
+    dataDependencies = [
+            retrofit     : "com.squareup.retrofit2:retrofit:$LibrariesVersion.retrofit",
+            retrofitMoshi: "com.squareup.retrofit2:converter-moshi:$LibrariesVersion.retrofit",
+            okHTTPLogger : "com.squareup.okhttp3:logging-interceptor:$LibrariesVersion.okHTTPLogger",
+            javaxInject  : "javax.inject:javax.inject:$LibrariesVersion.javaxInject",
+            moshi        : "com.squareup.moshi:moshi-kotlin$LibrariesVersion.moshi"
+    ]
+
+    domainDependencies = [
+            kotlin        : "org.jetbrains.kotlin:kotlin-stdlib:$LibrariesVersion.kotlin",
+            coroutinesCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$LibrariesVersion.coroutines",
+            javaxInject   : "javax.inject:javax.inject:$LibrariesVersion.javaxInject"
+    ]
+
+    thirdParty = [
+            mpAndroidChart: "com.github.PhilJay:MPAndroidChart:$LibrariesVersion.mpAndroidChart",
+    ]
+
+
+    TestLibrariesVersion = [
+            runner       : "1.3.0",
+            textCore     : "1.3.0",
+            jUnit        : "4.13.1",
+            androidX     : "1.1.2",
+            truth        : "1.1",
+            androidArch  : "2.1.0",
+            hilt         : "2.33-beta",
+            coroutines   : "1.4.2",
+            espresso     : "3.3.0",
+            mockWebServer: "4.9.0",
+            rules        : "1.3.0",
+    ]
+
+    TestLibraries = [
+            retrofitMoshi         : "com.squareup.retrofit2:converter-moshi:$LibrariesVersion.retrofit",
+            testCore              : "androidx.test:core:$TestLibrariesVersion.textCore",
+            junit                 : "junit:junit:$TestLibrariesVersion.jUnit",
+            androidX              : "androidx.test.ext:junit:$TestLibrariesVersion.androidX",
+            truth                 : "com.google.truth:truth:$TestLibrariesVersion.truth",
+            archCore              : "androidx.arch.core:core-testing:$TestLibrariesVersion.androidArch",
+            coroutines            : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$TestLibrariesVersion.coroutines",
+            hilt                  : "com.google.dagger:hilt-android-testing:$TestLibrariesVersion.hilt",
+            hiltKapt              : "com.google.dagger:hilt-android-compiler:$TestLibrariesVersion.hilt",
+            espresso              : "androidx.test.espresso:espresso-core:$TestLibrariesVersion.espresso",
+            espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$TestLibrariesVersion.espresso",
+            mockWebServer         : "com.squareup.okhttp3:mockwebserver:$TestLibrariesVersion.mockWebServer",
+            androidTestRules      : "androidx.test:rules:$TestLibrariesVersion.rules",
+            testRunner            : "androidx.test:runner:$TestLibrariesVersion.runner",
+    ]
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MenuTitle">
+
+    <item
+        android:id="@+id/bottom_navigation_bar_money_icon"
+        android:icon="@drawable/ic_money"
+        android:title="@string/marketPrice" />
+
+    <item
+        android:id="@+id/bottom_navigation_bar_transactions_icon"
+        android:icon="@drawable/ic_transactions"
+        android:title="@string/transactions" />
+
+    <item
+        android:id="@+id/bottom_navigation_bar_trade_volume_icon"
+        android:icon="@drawable/ic_volume"
+        android:title="@string/tradeVolume" />
+
+</menu>

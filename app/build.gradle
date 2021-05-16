@@ -1,0 +1,100 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion AndroidSdk.compileSdk
+    buildToolsVersion AndroidSdk.buildTools
+
+    defaultConfig {
+        applicationId AndroidClient.appId
+        minSdkVersion AndroidSdk.minSdk
+        targetSdkVersion AndroidSdk.targetSdk
+        versionCode AndroidClient.versionCode
+        versionName AndroidClient.versionName
+        testInstrumentationRunner "com.saldi.bitcoinmarketplace.presentation.testutil.CustomTestRunner"
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+}
+
+dependencies {
+
+    //Local Libs
+    implementation project(':domain')
+    implementation project(':data')
+
+    //Jetpack
+    implementation appDependencies.androidCore
+    implementation appDependencies.fragmentKTX
+    implementation appDependencies.appCompat
+    implementation appDependencies.constraintLayout
+
+    //Material
+    implementation appDependencies.materialDesign
+
+    //hilt for DI
+    implementation appDependencies.hilt
+    kapt appDependencies.hiltCompiler
+
+    // required for providing for hilt
+    implementation appDependencies.retrofit
+    implementation appDependencies.javaxInject
+
+    //coroutines
+    implementation appDependencies.coroutinesAndroid
+
+    //third party
+    implementation thirdParty.mpAndroidChart
+
+    //required for espresso idling
+    implementation TestLibraries.archCore
+    implementation TestLibraries.espressoIdlingResource
+    implementation TestLibraries.espresso
+
+
+    //test libraries
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.archCore
+    testImplementation TestLibraries.androidX
+    testImplementation TestLibraries.testRunner
+    testImplementation TestLibraries.truth
+    testImplementation TestLibraries.coroutines
+    testImplementation TestLibraries.mockWebServer
+    testImplementation TestLibraries.retrofitMoshi
+
+    //instrumentation
+    androidTestImplementation TestLibraries.testRunner
+    androidTestImplementation TestLibraries.androidTestRules
+    androidTestImplementation TestLibraries.espresso
+    androidTestImplementation TestLibraries.espressoIdlingResource
+    androidTestImplementation TestLibraries.testCore
+    androidTestImplementation TestLibraries.hilt
+    kaptAndroidTest TestLibraries.hiltKapt
+}

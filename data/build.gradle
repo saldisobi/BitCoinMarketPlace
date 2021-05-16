@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'kotlin-kapt'
+}
+
+
+dependencies {
+    api project(':domain')
+
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitMoshi
+    implementation dataDependencies.okHTTPLogger
+    implementation domainDependencies.javaxInject
+
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.coroutines
+    testImplementation TestLibraries.truth
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8.toString()
+targetCompatibility = JavaVersion.VERSION_1_8.toString()
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
