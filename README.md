@@ -96,4 +96,10 @@ The presentation layer is extensively unit-tested to ensure that the viewmodel r
 
  UI tests just view state is rendered as expected. However, the extensive unit test coverage ensures that the app works as expected.
 
+ ## Demo
+
+Find below screenshots of the application
+
+|<img src="images/chart.png" width=200/>|<img src="images/retry.png" width=200/>|
+
 ### PS: Espresso test uses deprecated ActivityRule, exhausted enough to try upgrading at this time
