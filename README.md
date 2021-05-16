@@ -8,7 +8,7 @@ Sample app written in Kotlin with the latest Android Architecture Components and
 - [Architecture](#architecture)
 - [Libraries](#libraries)
 - [Testing](#testing)
-
+- [Demo](#demo)<!-- @IGNORE PREVIOUS: anchor -->
 
 ## Introduction
 
