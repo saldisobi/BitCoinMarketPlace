@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BitCoinMarketPlace</string>
+    <string name="bitcoin_market_price_activity_chart_placeholder_text">Sorry, nothing to show at the moment</string>
+    <string name="marketPrice">Market Price</string>
+    <string name="transactions">Transactions</string>
+    <string name="tradeVolume">Trade Volume</string>
+    <string name="retry">Retry</string>
+    <string name="something_went_wrong">Something went wrong..</string>
+    <string name="image_no_internet">Image No Internet</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Splash Screen Activity's background -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/colorPrimary" />
+
+    <item
+        android:width="50dp"
+        android:height="80dp"
+        android:drawable="@drawable/ic_bitcoin"
+        android:gravity="center" />
+</layer-list>
