@@ -95,5 +95,5 @@ Each layer has its own tests. The remote layer makes use of Mockwebserver to tes
 The presentation layer is extensively unit-tested to ensure that the viewmodel renders the correct view states.
 
  UI tests just view state is rendered as expected. However, the extensive unit test coverage ensures that the app works as expected.
-**
- PS: Espresso test uses deprecated ActivityRule, exhausted enough to try upgrading at this time**
+
+### PS: Espresso test uses deprecated ActivityRule, exhausted enough to try upgrading at this time
