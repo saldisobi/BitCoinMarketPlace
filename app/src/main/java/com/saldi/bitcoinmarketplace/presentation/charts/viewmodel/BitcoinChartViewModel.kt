@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.saldi.bitcoinmarketplace.presentation.charts.common.arch.safeCollect
 import com.saldi.bitcoinmarketplace.presentation.charts.common.streams.StreamState
 import com.saldi.bitcoinmarketplace.presentation.charts.common.utils.wrapEspressoIdlingResource
 import com.saldi.bitcoinmarketplace.presentation.charts.entities.BitcoinPresentationViewEntity
@@ -53,7 +54,7 @@ class BitcoinChartViewModel @ExperimentalCoroutinesApi
         viewModelScope.launch {
             _bitcoinMarketPriceInformationLiveData.postValue(StreamState.Loading)
             wrapEspressoIdlingResource {
-                useCase(Unit).collect {
+                useCase(Unit).safeCollect {
                     when (it) {
                         is DomainResult.Success -> {
                             handleSuccess(it.data)
@@ -114,6 +115,5 @@ class BitcoinChartViewModel @ExperimentalCoroutinesApi
         const val SERVER_ERROR = "Unable to reach our servers, please retry after sometime"
 
     }
-
 }
 

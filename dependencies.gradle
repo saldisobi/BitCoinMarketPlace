@@ -19,7 +19,8 @@ ext {
             kotlin          : "1.4.10",
             hilt            : "2.33-beta",
             javaxInject     : "1",
-            mpAndroidChart  : "v3.1.0-alpha"
+            mpAndroidChart  : "v3.1.0-alpha",
+            leakCanary      : "2.7"
     ]
 
     BuildPlugins = [
@@ -71,6 +72,7 @@ ext {
 
     thirdParty = [
             mpAndroidChart: "com.github.PhilJay:MPAndroidChart:$LibrariesVersion.mpAndroidChart",
+            leakCanary    : "com.squareup.leakcanary:leakcanary-android:$LibrariesVersion.leakCanary"
     ]
 
 

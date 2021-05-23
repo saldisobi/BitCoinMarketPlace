@@ -42,6 +42,9 @@ android {
         exclude 'META-INF/AL2.0'
         exclude 'META-INF/LGPL2.1'
     }
+    configurations {
+        debugImplementation.exclude group: "junit", module: "junit"
+    }
 }
 
 dependencies {
@@ -74,7 +77,7 @@ dependencies {
     implementation thirdParty.mpAndroidChart
 
     //required for espresso idling
-    implementation TestLibraries.archCore
+ //   implementation TestLibraries.archCore
     implementation TestLibraries.espressoIdlingResource
     implementation TestLibraries.espresso
 
@@ -97,4 +100,7 @@ dependencies {
     androidTestImplementation TestLibraries.testCore
     androidTestImplementation TestLibraries.hilt
     kaptAndroidTest TestLibraries.hiltKapt
+
+    //debug detect leaks
+    debugImplementation thirdParty.leakCanary
 }
